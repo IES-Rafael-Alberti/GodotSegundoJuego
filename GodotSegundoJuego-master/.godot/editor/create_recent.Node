@@ -1,0 +1,6 @@
+CollisionShape2D
+Sprite2D
+AnimatedSprite2D
+AudioStreamPlayer2D      - Matches the "sound" keyword.
+AudioListener2D      - Matches the "sound" keyword.
+RayCast2D

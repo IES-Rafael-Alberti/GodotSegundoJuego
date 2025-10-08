@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://udqhlpxkgq4x"]
+
+[ext_resource type="Texture2D" uid="uid://bolj33jl0aqcf" path="res://brackeys_platformer_assets/sprites/platforms.png" id="1_s5nw7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5nw7"]
+size = Vector2(32, 8)
+
+[node name="Plataform" type="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s5nw7")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s5nw7")
+region_enabled = true
+region_rect = Rect2(16, 0, 32, 8)
