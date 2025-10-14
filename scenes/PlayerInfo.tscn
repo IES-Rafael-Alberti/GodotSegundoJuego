@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://rph7hsxpxca"]
+
+[ext_resource type="Script" uid="uid://cmf8cxl4boeyw" path="res://player_info.gd" id="1_8cyp6"]
+[ext_resource type="FontFile" uid="uid://dryep6wcvfh42" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_yuusw"]
+
+[node name="PlayerInfo" type="CanvasLayer"]
+script = ExtResource("1_8cyp6")
+
+[node name="CoinsCount" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="CoinsLabel" type="Label" parent="CoinsCount"]
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("1_yuusw")
+text = "Test"

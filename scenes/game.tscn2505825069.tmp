@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://gwu5n8naeag8"]
+[gd_scene load_steps=18 format=3 uid="uid://gwu5n8naeag8"]
 
+[ext_resource type="Script" uid="uid://bsso3l0bubrch" path="res://scripts/game_manager.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://j4xdtk4bm3ru" path="res://scenes/player.tscn" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://c4d47fncx123g" path="res://scripts/player.gd" id="2_lnu2h"]
+[ext_resource type="FontFile" uid="uid://dryep6wcvfh42" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_vtaks"]
 [ext_resource type="PackedScene" uid="uid://udqhlpxkgq4x" path="res://scenes/plataform.tscn" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bvmnr8mq0h1y2" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bgkpvqtp02p8w" path="res://scenes/coin.tscn" id="5_iywne"]
@@ -218,6 +220,23 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_0tnpc")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = -672.0
+offset_top = -52.0
+offset_right = -568.0
+offset_bottom = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vtaks")
+theme_override_font_sizes/font_size = 8
+text = "You pickup 0 coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Player" parent="." instance=ExtResource("1_yqjtg")]
 position = Vector2(0, -12)

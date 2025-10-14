@@ -7,7 +7,7 @@ const JUMP_VELOCITY := -300.0
 # DASH CONSTANTS
 const DASH_SPEED := 300.0           # Horizontal speed during dash
 const DASH_DURATION := 0.15         # Seconds the dash lasts
-const DASH_COOLDOWN := 0.50         # Seconds before the next dash
+const DASH_COOLDOWN := 1.50         # Seconds before the next dash
 
 # DASH STATE
 var dash_time_left := 0.0           # Time remaining for the current dash
@@ -23,9 +23,22 @@ const max_jumps: int = 2
 @onready var jump: AudioStreamPlayer2D = $Jump
 @onready var dash: AudioStreamPlayer2D = $dash
 
+var getYunque = false
+var fire = preload("res://scenes/yunque.tscn")
+
 # Proyectile
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fire"): #Tecla f ot click right
+		if getYunque : return
+		getYunque = true 
+		var newYunque = fire.instantiate()
+		newYunque.position = self.position
+		newYunque.isFlip = $AnimatedSprite2D.flip_h
+		newYunque.connect("yunque_destroyed", _on_yunque_destroyed)
+		add_sibling(newYunque)
 
-
+func _on_yunque_destroyed():
+	getYunque = false
 
 func _physics_process(delta: float) -> void:
 	# Update dash timers 

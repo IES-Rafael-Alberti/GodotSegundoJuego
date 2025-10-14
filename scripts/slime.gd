@@ -21,3 +21,9 @@ func _process(delta: float) -> void:
 		animated_sprite.flip_h = false
 	
 	position.x += direction * SPEED * delta
+
+func _on_killingzone_area_entered(area: Area2D) -> void:
+	$AnimatedSprite.play("die")
+
+func _on_animated_sprite_animation_finished() -> void:
+	self.queue_free()
