@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b735ybwfeem8"]
+[gd_scene load_steps=2 format=3 uid="uid://b735ybwfeem8"]
 
 [ext_resource type="Script" uid="uid://bx4bac0gwvmcx" path="res://scripts/killingzone.gd" id="1_w7htg"]
-[ext_resource type="AudioStream" uid="uid://dk8mi223ppvtj" path="res://brackeys_platformer_assets/sounds/die_Sound.mp3" id="2_ulssi"]
 
 [node name="Killingzone" type="Area2D"]
 collision_mask = 2
@@ -10,9 +9,6 @@ script = ExtResource("1_w7htg")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
-
-[node name="Die_Sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_ulssi")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
