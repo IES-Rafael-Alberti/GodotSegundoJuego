@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwwpn2h54s5au"]
+[gd_scene load_steps=17 format=3 uid="uid://bwwpn2h54s5au"]
 
 [ext_resource type="Script" uid="uid://bg23yk0jw6srh" path="res://scripts/slime.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://cmbrig446ooap" path="res://brackeys_platformer_assets/sprites/slime_green.png" id="1_p2gj0"]
 [ext_resource type="PackedScene" uid="uid://b735ybwfeem8" path="res://scenes/killingzone.tscn" id="2_n6pvg"]
+[ext_resource type="AudioStream" uid="uid://ci2rq2cq016yy" path="res://brackeys_platformer_assets/sounds/MuerteSlime.mp3" id="4_pjw23"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
 atlas = ExtResource("1_p2gj0")
@@ -117,6 +118,9 @@ target_position = Vector2(9, 12)
 
 [node name="RayCastFloorLeft" type="RayCast2D" parent="."]
 target_position = Vector2(-9, 12)
+
+[node name="Die_Slime" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pjw23")
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_animated_sprite_animation_finished"]
 [connection signal="area_entered" from="Killingzone" to="." method="_on_killingzone_area_entered"]

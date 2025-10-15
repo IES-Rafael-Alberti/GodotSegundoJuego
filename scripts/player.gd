@@ -22,6 +22,7 @@ const max_jumps: int = 2
 # Sounds effects
 @onready var jump: AudioStreamPlayer2D = $Jump
 @onready var dash: AudioStreamPlayer2D = $dash
+@onready var yunque_sound: AudioStreamPlayer2D = $Yunque_Sound
 
 var getYunque = false
 var fire = preload("res://scenes/yunque.tscn")
@@ -32,6 +33,7 @@ func _input(event: InputEvent) -> void:
 		if getYunque : return
 		getYunque = true 
 		var newYunque = fire.instantiate()
+		yunque_sound.play()
 		newYunque.position = self.position
 		newYunque.isFlip = $AnimatedSprite2D.flip_h
 		newYunque.connect("yunque_destroyed", _on_yunque_destroyed)

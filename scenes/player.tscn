@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://j4xdtk4bm3ru"]
+[gd_scene load_steps=28 format=3 uid="uid://j4xdtk4bm3ru"]
 
 [ext_resource type="Texture2D" uid="uid://cwi50gu7yjli1" path="res://brackeys_platformer_assets/sprites/knight.png" id="1_4flbx"]
 [ext_resource type="AudioStream" uid="uid://ya0a2po4h7xq" path="res://brackeys_platformer_assets/sounds/jump.wav" id="2_g2els"]
 [ext_resource type="AudioStream" uid="uid://cp2j5su156x5" path="res://brackeys_platformer_assets/sounds/Dash.mp3" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://dr1j4v1utysst" path="res://brackeys_platformer_assets/sounds/LanzarYunque.mp3" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
@@ -191,3 +192,6 @@ stream = ExtResource("2_g2els")
 
 [node name="dash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qhqgy")
+
+[node name="Yunque_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_dqkch")

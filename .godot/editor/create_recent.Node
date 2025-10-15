@@ -1,11 +1,3 @@
-Node
-Label
-CanvasLayer
-Timer
-Area2D
-CollisionShape2D
-Sprite2D
+AudioStreamPlayer2D
+AudioListener2D
 AnimatedSprite2D
-AudioStreamPlayer2D      - Matches the "sound" keyword.
-AudioListener2D      - Matches the "sound" keyword.
-RayCast2D
